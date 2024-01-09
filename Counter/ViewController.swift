@@ -13,9 +13,9 @@ class ViewController: UIViewController {
     @IBOutlet weak var buttonPlusOne: UIButton!
     @IBOutlet weak var buttonMinusOne: UIButton!
     @IBOutlet weak var buttonReset: UIButton!
-    
     @IBOutlet weak var historyTextViewer: UITextView!
     
+    // Счётчик для labelText
     private var counter: Int = 0
     
     override func viewDidLoad() {
@@ -56,7 +56,6 @@ class ViewController: UIViewController {
     @IBAction func resetLabelCounter(_ sender: Any) {
         counter = 0
         labelText.text = "Значение счётчика: \(counter)"
-        
         logHistory("Значение сброшено")
     }
     
@@ -66,6 +65,7 @@ class ViewController: UIViewController {
         dateFormater.dateFormat = "dd-MM-yyyy HH:mm"
         let dateString = dateFormater.string(from: Date())
         
+        // Добавление текста на экран
         let historyEntry = "\n\(dateString): \(message)"
         historyTextViewer.text.append(historyEntry)
         
