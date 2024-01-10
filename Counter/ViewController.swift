@@ -10,10 +10,10 @@ import UIKit
 class ViewController: UIViewController {
 
     @IBOutlet weak var labelText: UILabel!
-    @IBOutlet weak var buttonPlusOne: UIButton!
-    @IBOutlet weak var buttonMinusOne: UIButton!
-    @IBOutlet weak var buttonReset: UIButton!
-    @IBOutlet weak var historyTextViewer: UITextView!
+    @IBOutlet weak var plusOneButton: UIButton!
+    @IBOutlet weak var minusOneButton: UIButton!
+    @IBOutlet weak var resetButton: UIButton!
+    @IBOutlet weak var historyTextView: UITextView!
     
     // Счётчик для labelText
     private var counter: Int = 0
@@ -22,15 +22,15 @@ class ViewController: UIViewController {
         super.viewDidLoad()
         
         labelText.text = "Значение счётчика: \(counter)"
-        buttonPlusOne.setTitle("+", for: .normal)
-        buttonMinusOne.setTitle("-", for: .normal)
-        buttonReset.setTitle("Сброс", for: .normal)
+        plusOneButton.setTitle("+", for: .normal)
+        minusOneButton.setTitle("-", for: .normal)
+        resetButton.setTitle("Сброс", for: .normal)
         
-        buttonPlusOne.tintColor = .red
-        buttonReset.tintColor = .green
+        plusOneButton.tintColor = .red
+        resetButton.tintColor = .green
         
-        historyTextViewer.text = "История изменений:"
-        historyTextViewer.isEditable = false // Блокировка возможности редактировать 
+        historyTextView.text = "История изменений:"
+        historyTextView.isEditable = false // Блокировка возможности редактировать 
     }
 
     // Логика кнопки +
@@ -67,10 +67,10 @@ class ViewController: UIViewController {
         
         // Добавление текста на экран
         let historyEntry = "\n\(dateString): \(message)"
-        historyTextViewer.text.append(historyEntry)
+        historyTextView.text.append(historyEntry)
         
-        let range = NSMakeRange(historyTextViewer.text.count - 1, 1)
-        historyTextViewer.scrollRangeToVisible(range)
+        let range = NSMakeRange(historyTextView.text.count - 1, 1)
+        historyTextView.scrollRangeToVisible(range)
     }
     
 }

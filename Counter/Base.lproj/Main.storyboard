@@ -63,11 +63,11 @@
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     </view>
                     <connections>
-                        <outlet property="buttonMinusOne" destination="oXc-59-cmT" id="fw8-sw-EzX"/>
-                        <outlet property="buttonPlusOne" destination="QJU-tG-4qJ" id="F6u-5y-kC2"/>
-                        <outlet property="buttonReset" destination="F72-EU-M9D" id="uQR-nx-lkb"/>
-                        <outlet property="historyTextViewer" destination="n8u-2h-TKt" id="aTi-S2-tt8"/>
+                        <outlet property="historyTextView" destination="n8u-2h-TKt" id="aTi-S2-tt8"/>
                         <outlet property="labelText" destination="IPV-vq-C2B" id="bdJ-56-zVo"/>
+                        <outlet property="minusOneButton" destination="oXc-59-cmT" id="fw8-sw-EzX"/>
+                        <outlet property="plusOneButton" destination="QJU-tG-4qJ" id="F6u-5y-kC2"/>
+                        <outlet property="resetButton" destination="F72-EU-M9D" id="uQR-nx-lkb"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
