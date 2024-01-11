@@ -9,11 +9,11 @@ import UIKit
 
 class ViewController: UIViewController {
 
-    @IBOutlet weak var labelText: UILabel!
-    @IBOutlet weak var plusOneButton: UIButton!
-    @IBOutlet weak var minusOneButton: UIButton!
-    @IBOutlet weak var resetButton: UIButton!
-    @IBOutlet weak var historyTextView: UITextView!
+    @IBOutlet weak private var labelText: UILabel!
+    @IBOutlet weak private var plusOneButton: UIButton!
+    @IBOutlet weak private var minusOneButton: UIButton!
+    @IBOutlet weak private var resetButton: UIButton!
+    @IBOutlet weak private var historyTextView: UITextView!
     
     // Счётчик для labelText
     private var counter: Int = 0
@@ -34,7 +34,7 @@ class ViewController: UIViewController {
     }
 
     // Логика кнопки +
-    @IBAction func plusOnePushed(_ sender: Any) {
+    @IBAction private func plusOnePushed(_ sender: Any) {
         counter += 1
         labelText.text = "Значение счётчика: \(counter)"
         
@@ -42,7 +42,7 @@ class ViewController: UIViewController {
     }
     
     // Логика кнопки -
-    @IBAction func minusOnePushed(_ sender: Any) {
+    @IBAction private func minusOnePushed(_ sender: Any) {
         if counter > 0 {
             counter -= 1
             labelText.text = "Значение счётчика: \(counter)"
@@ -53,7 +53,7 @@ class ViewController: UIViewController {
     }
     
     // Логика кнопки сброса
-    @IBAction func resetLabelCounter(_ sender: Any) {
+    @IBAction private func resetLabelCounter(_ sender: Any) {
         counter = 0
         labelText.text = "Значение счётчика: \(counter)"
         logHistory("Значение сброшено")
