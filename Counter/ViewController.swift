@@ -32,6 +32,20 @@ class ViewController: UIViewController {
         historyTextView.text = "История изменений:"
         historyTextView.isEditable = false // Блокировка возможности редактировать 
     }
+    
+    // Логика поля истории нажатий
+    private func logHistory(_ message: String) {
+        let dateFormater = DateFormatter()
+        dateFormater.dateFormat = "dd-MM-yyyy HH:mm"
+        let dateString = dateFormater.string(from: Date())
+        
+        // Добавление текста на экран
+        let historyEntry = "\n\(dateString): \(message)"
+        historyTextView.text.append(historyEntry)
+        
+        let range = NSMakeRange(historyTextView.text.count - 1, 1)
+        historyTextView.scrollRangeToVisible(range)
+    }
 
     // Логика кнопки +
     @IBAction private func plusOnePushed(_ sender: Any) {
@@ -58,20 +72,5 @@ class ViewController: UIViewController {
         labelText.text = "Значение счётчика: \(counter)"
         logHistory("Значение сброшено")
     }
-    
-    // Логика поля истории нажатий
-    private func logHistory(_ message: String) {
-        let dateFormater = DateFormatter()
-        dateFormater.dateFormat = "dd-MM-yyyy HH:mm"
-        let dateString = dateFormater.string(from: Date())
-        
-        // Добавление текста на экран
-        let historyEntry = "\n\(dateString): \(message)"
-        historyTextView.text.append(historyEntry)
-        
-        let range = NSMakeRange(historyTextView.text.count - 1, 1)
-        historyTextView.scrollRangeToVisible(range)
-    }
-    
 }
 
