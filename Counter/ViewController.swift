@@ -3,6 +3,7 @@
 //  Counter
 //
 //  Created by Кирилл Кашицкий on 09.01.2024.
+//  Pushed with terminal
 //
 
 import UIKit
