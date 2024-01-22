@@ -10,6 +10,7 @@ import UIKit
 
 class ViewController: UIViewController {
 
+    // Добавление объектов интерфейса
     @IBOutlet weak private var labelText: UILabel!
     @IBOutlet weak private var plusOneButton: UIButton!
     @IBOutlet weak private var minusOneButton: UIButton!
